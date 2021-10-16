@@ -7,7 +7,7 @@
         <app-fiftylifeline></app-fiftylifeline>
         <app-phonelifeline></app-phonelifeline>
         <app-audiencelifeline></app-audiencelifeline>
-        <app-ddiplifeline *ngIf = "this.progress > 4"></app-ddiplifeline>
+        <app-ddiplifeline *ngIf = "this.progress > 4 && this.gameMode.currentMode == 'default'"></app-ddiplifeline>
         <br>
         <br>
         <app-cashwon [winCash] = "this.winCash"></app-cashwon>
@@ -22,7 +22,7 @@
 <div class = "wwtbam_game">
   <div class = "question_choice">
     <app-questions [title] = "question"></app-questions>
-  
+
     <div class = "choice_row top">
       <app-ans [letter] = "letters[0]" [choice] = "answers[0]" [correct] = "answers[0] == answers[correct]"></app-ans>
       <div style = "width:50px; background-color: #1488e8; height: 3px;"></div>
