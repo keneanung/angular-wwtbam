@@ -1,0 +1,1 @@
+export type ModeType = "default" | "german" | "germanRisk";
