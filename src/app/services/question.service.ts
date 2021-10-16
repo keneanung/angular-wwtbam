@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class QuestionService {
   public headers: any;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       "Content-Type": "application/json"
     });
@@ -16,7 +16,7 @@ export class QuestionService {
 
   async getQuestions() {
     var param = window.location.pathname.split("/")[2];
-    const response = await this.http.get('http://localhost:8000/questions/' + param).toPromise();
+    const response = await this.http.get('../../questions/' + param).toPromise();
     return response;
   }
 }
