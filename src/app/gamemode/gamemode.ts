@@ -7,9 +7,8 @@ export type ModeType = "default" | "german" | "germanRisk";
 })
 
 export class GameMode {
-    public readonly currentMode: ModeType;
-    constructor(){
+    getCurrentMode(): ModeType {
         const urlParams = new URLSearchParams(window.location.search);
-        this.currentMode = <ModeType>urlParams.get("gameMode")
+        return <ModeType>urlParams.get("gameMode")
     }
 }

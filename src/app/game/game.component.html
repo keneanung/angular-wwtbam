@@ -7,7 +7,7 @@
         <app-fiftylifeline></app-fiftylifeline>
         <app-phonelifeline></app-phonelifeline>
         <app-audiencelifeline></app-audiencelifeline>
-        <app-ddiplifeline *ngIf = "this.progress > 4 && this.gameMode.currentMode == 'default'"></app-ddiplifeline>
+        <app-ddiplifeline *ngIf = "this.progress > 4 && this.gameMode.getCurrentMode() == 'default'"></app-ddiplifeline>
         <br>
         <br>
         <app-cashwon [winCash] = "this.winCash"></app-cashwon>

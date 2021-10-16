@@ -184,7 +184,7 @@ export class GameComponent {
     if (questionsCorrect < 5) {
       localStorage.setItem("prize", "0");
     }
-    else if ((questionsCorrect >= 5 && questionsCorrect < 10) || this.gameMode.currentMode == 'germanRisk') {
+    else if ((questionsCorrect >= 5 && questionsCorrect < 10) || this.gameMode.getCurrentMode() == 'germanRisk') {
       localStorage.setItem("prize", "1,000");
     }
     else if (questionsCorrect >= 10 && questionsCorrect <= 14) {
