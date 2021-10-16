@@ -32,7 +32,7 @@ export class GameComponent {
 
   @ViewChild('overlay') overlay: ElementRef;
 
-  constructor(private el: ElementRef, private router: Router, private mtree: MoneytreeComponent, private qq: QuestionService, private readonly gameMode: GameMode) {
+  constructor(private el: ElementRef, private router: Router, private mtree: MoneytreeComponent, private qq: QuestionService, public readonly gameMode: GameMode) {
     this.letters = ["A", "B", "C", "D"];
     this.doubledip = false;
 
