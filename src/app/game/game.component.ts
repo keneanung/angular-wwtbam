@@ -4,6 +4,7 @@ import { QuestionService } from '../services/question.service';
 import { Router } from '@angular/router';
 
 import { TweenLite, TimelineMax } from 'gsap';
+import { GameMode } from '../gamemode/gamemode';
 
 @Component({
   selector: 'app-game',
@@ -31,10 +32,10 @@ export class GameComponent {
 
   @ViewChild('overlay') overlay: ElementRef;
 
-  constructor(private el: ElementRef, private router: Router, private mtree: MoneytreeComponent, private qq: QuestionService) {
+  constructor(private el: ElementRef, private router: Router, private mtree: MoneytreeComponent, private qq: QuestionService, public readonly gameMode: GameMode) {
     this.letters = ["A", "B", "C", "D"];
     this.doubledip = false;
-    
+
     this.progress = 0;
     this.totalPrize = "0";
 
@@ -44,8 +45,8 @@ export class GameComponent {
 
     this.bgm = true;
 
-    this.audio = new Audio();  
-    this.audio.src = "../../assets/sound/100-1000.wav"; 
+    this.audio = new Audio();
+    this.audio.src = "../../assets/sound/100-1000.wav";
 
     this.playBGM(this.progress);
   }
@@ -88,7 +89,7 @@ export class GameComponent {
     }, 6000);
   }
 
-  setDoubleDip(toggle:boolean) {
+  setDoubleDip(toggle: boolean) {
     this.doubledip = toggle;
   }
 
@@ -152,7 +153,7 @@ export class GameComponent {
       }
 
       this.hideAnswers();
-      
+
       this.question = this.qa[this.progress].question;
       this.answers = this.qa[this.progress].answers;
       this.correct = this.qa[this.progress].correct;
@@ -183,7 +184,7 @@ export class GameComponent {
     if (questionsCorrect < 5) {
       localStorage.setItem("prize", "0");
     }
-    else if (questionsCorrect >= 5 && questionsCorrect < 10) {
+    else if ((questionsCorrect >= 5 && questionsCorrect < 10) || this.gameMode.getCurrentMode() == 'germanRisk') {
       localStorage.setItem("prize", "1,000");
     }
     else if (questionsCorrect >= 10 && questionsCorrect <= 14) {
@@ -258,7 +259,7 @@ export class GameComponent {
 
     this.audio.loop = true;
     this.audio.load();
-    this.audio.play(); 
+    this.audio.play();
   }
 
   celebratoryLighting() {

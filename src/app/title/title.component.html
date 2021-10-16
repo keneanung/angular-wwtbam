@@ -4,13 +4,17 @@
       <div class = "wwtbam_image">
         <img #titleImage src = "https://vignette.wikia.nocookie.net/logopedia/images/6/64/Millionaire-logo-medium.gif/revision/latest?cb=20121021141402">
       </div>
-    
+
       <div>
         <input type = "number" min = "1" max = "25" #num>
-        <button (click) = "goToGame(num.value)">Start game</button>
+        <select #gameMode>
+          <option value="default" selected>Standard Game</option>
+          <option value="german">German Standard Game</option>
+          <option value="germanRisk">German Risk Game</option>
+        </select>
+        <button (click) = "goToGame(num.value, gameMode.value)">Start game</button>
       </div>
     </div>
   </div>
 </div>
 
-  

@@ -13,6 +13,7 @@ import { FiftylifelineComponent } from './fiftylifeline/fiftylifeline.component'
 import { PhonelifelineComponent } from './phonelifeline/phonelifeline.component';
 import { AudiencelifelineComponent } from './audiencelifeline/audiencelifeline.component';
 import { DdiplifelineComponent } from './ddiplifeline/ddiplifeline.component';
+import { RisklifelineComponent } from './risklifeline/risklifeline.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CashwonComponent } from './cashwon/cashwon.component';
 
@@ -29,6 +30,7 @@ import { CashwonComponent } from './cashwon/cashwon.component';
     PhonelifelineComponent,
     AudiencelifelineComponent,
     DdiplifelineComponent,
+    RisklifelineComponent,
     CashwonComponent,
   ],
   imports: [

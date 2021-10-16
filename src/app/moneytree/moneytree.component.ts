@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GameComponent } from '../game/game.component';
+import { GameMode } from '../gamemode/gamemode';
 
 @Component({
   selector: 'app-moneytree',
@@ -9,7 +11,7 @@ export class MoneytreeComponent implements OnInit {
   q_numbers: Tree[];
   @Input() currentValue: number;
 
-  constructor() {
+  constructor(private readonly gameMode: GameMode) {
     this.q_numbers = [
       {"question": 15, "value": "1 MILLION"},
       {"question": 14, "value": "500,000"},
